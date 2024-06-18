@@ -8,26 +8,38 @@ import { evaluate } from 'mathjs'; // npm install mathjs
 function App() {
 
   const [input, setInput] = useState('');
+  const [cursorVisible, setCursorVisible] = useState(false);
 
   const addInput = value => {
     setInput(input + value);
   };
 
+  const handleKeyDown = (event) => {
+    const { key } = event;
+    if (/[\d.+\-*/]/.test(key)) {
+      addInput(key);
+    } else if (key === 'Enter') {
+      calculateResult();
+    } else if (key === 'Backspace') {
+      setInput(input.slice(0, -1));
+    }
+  };
+
   const calculateResult = () => {
     if (input) {
-      setInput(evaluate(input));
+      setInput(String(evaluate(input)));
     } else {
-      alert("Insert values before computing")
+      alert("Insert values before computing");
     }
-  }
+  };
 
   return (
-    <div className='App'>
+    <div className='App' onKeyDown={handleKeyDown} tabIndex={0}>
       <div className='title-container'>
         <h1 className='title'>Calculator</h1>
       </div>
       <div className='calculator-container'>
-        <Screen inputScreen={input}/>
+        <Screen inputScreen={input} cursorVisible={cursorVisible} setCursorVisible={setCursorVisible} />
         <div className='row'>
           <Button manageClick={addInput}>1</Button>
           <Button manageClick={addInput}>2</Button>
