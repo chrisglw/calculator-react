@@ -1,0 +1,10 @@
+.cursor {
+    display: inline-block;
+    width: 1px;
+    background-color: white;
+    margin-left: 2px;
+}
+
+.cursor-hidden {
+    visibility: hidden;
+}

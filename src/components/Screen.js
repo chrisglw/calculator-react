@@ -1,28 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { BlinkingCursor } from './BlinkingCursor';
 import '../stylesheets/Screen.css'
 
-export function Screen({ inputScreen }) {
-  const [cursorVisible, setCursorVisible] = useState(false);
-  const screenRef = useRef(null);
-
-  useEffect(() => {
-    if (cursorVisible) {
-      const interval = setInterval(() => {
-        screenRef.current.classList.toggle('cursor-hidden');
-      }, 500);
-      return () => clearInterval(interval);
-    }
-  }, [cursorVisible]);
-
-  const handleClick = () => {
-    setCursorVisible(true);
-  };
-
-
+export function Screen({ inputScreen, cursorVisible }) {
   return (
-    <div className='input' onClick={handleClick} ref={screenRef}>
+    <div className='input'>
       {inputScreen}
-      {cursorVisible && <span className="cursor">|</span>}
+      <BlinkingCursor isVisible={cursorVisible} />
     </div>
-  )
+  );
 }
