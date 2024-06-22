@@ -1,8 +1,8 @@
 .button-clear {
-    height: 80px;
+    height: 83px;
     font-size: 1.6em;
     display: flex;
-    flex: 1;
+    flex: 1 1;
     margin-top: 10px;
     background-color: #a5a5a5;
     justify-content: center;
