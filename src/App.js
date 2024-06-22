@@ -96,7 +96,7 @@ function App() {
           <Button manageClick={addInput}>+</Button>
         </div>
         <div className='row'>
-          <Button manageClick={addInput}>0</Button>
+          <Button className='zero' manageClick={addInput}>0</Button>
           <Button manageClick={addInput}>.</Button>
           <Button manageClick={calculateResult}>=</Button>
         </div>

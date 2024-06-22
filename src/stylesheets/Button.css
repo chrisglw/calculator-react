@@ -25,3 +25,8 @@
 .operator:hover {
     background-color: #fbc78d;
 }
+
+.zero {
+    flex: 2;
+}
+

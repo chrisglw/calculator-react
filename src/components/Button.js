@@ -7,9 +7,11 @@ export function Button(props) {
     return isNaN(value) && (value !== '.');
   };
 
+  const buttonClass = `button-container ${isOperator(props.children) ? 'operator' : ''} ${props.children === '0' ? 'zero' : ''}`;
+
+
   return (
-    <div className={`button-container ${isOperator(props.children) ? 'operator' : ''}`.trimEnd()}
-      onClick={() => props.manageClick(props.children)}>
+    <div className={buttonClass} onClick={() => props.manageClick(props.children)}>
       {props.children}
     </div>
   );
