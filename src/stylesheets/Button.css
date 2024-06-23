@@ -28,5 +28,7 @@
 
 .zero {
     flex: 2;
+    justify-content: left;
+    padding-left: 30px;
 }
 

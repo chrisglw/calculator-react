@@ -11,7 +11,17 @@ function App() {
   const inputRef = useRef(null);
 
   const addInput = value => {
-    setInput(prev => prev + value);
+    if (value === '+/-') {
+      setInput(prev => {
+        if (prev.startsWith('-')) {
+          return prev.slice(1);
+        } else {
+          return '-' + prev;
+        }
+      });
+    } else {
+      setInput(prev => prev + value);
+    }
     setCursorVisible(true);
   };
 
@@ -71,7 +81,7 @@ function App() {
         <Screen inputScreen={input} cursorVisible={cursorVisible} />
         <div className='row'>
           <ButtonClear manageClear={() => setInput('')}>
-            Clear
+            {input ? 'C' : 'AC'}
           </ButtonClear>
           <Button manageClick={addInput}>+/-</Button>
           <Button manageClick={addInput}>%</Button>
