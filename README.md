@@ -1,3 +1,26 @@
+# Overview
+As a software engineer, my goal in developing this project was to enhance my understanding of React programming language. 
+The software serves as a basic calculator, demonstrating key concepts and syntax within React.
+
+The purpose of this project is to create a functional calculator that computes the basic operations.
+By implementing features such as adding, subtraction, multiplication, and division,
+I aimed to solidify my knowledge of React fundamentals.
+
+[Software Live Demo](https://chrisglw.github.io/calculator-react/)
+
+# Development Environment
+
+- Integrated Development Environment (IDE): Visual Studio Code
+- Programming Language: React
+- Version Control: Git
+
+
+# Future Work
+
+- Implement support for negative numbers.
+- Develop a feature for calculating percentages.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
